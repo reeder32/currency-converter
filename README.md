@@ -24,7 +24,7 @@
 
 - Go [here](https://www.exchangerate-api.com) to get your free api key
 - Create a .env file by navigating to the root folder and running command 'touch .env'
-- Open the .env file and enter text 'API_KEY = "your_custom_api_key"
+- Open the .env file and enter text API_KEY = "your_custom_api_key"
 
 5. In terminal, run 'npm run start' to start test server
 6. Home page will open in your default browser.
