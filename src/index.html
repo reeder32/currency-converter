@@ -8,18 +8,23 @@
   </head>
   <body>
     <div class="container">
-      <form id="form">
-        <label for="dollars">Enter USD Amount: </label>
-        <input id="dollars"></input>
-        <select name="currency-select" id="currency-selecter">
-          <option value="" disabled>Country Currency Code</option>
-        </select>
-        <button id="convert" class="btn-primary">Convert!</button>
+      <form id="form" class="col-md-8 offset-md-2 bg-light">
+       <div class="form-row  align-items-center">
+         <label for="dollars">Enter USD Amount: </label>
+         <input id="dollars"></input>
+         <select name="currency-select" id="currency-selecter">
+           <option value="" disabled>Country Currency Code</option>
+         </select>
+       </div>
+      
       </form>
-
-      <div id="result">
-        <h3>Based on the amount of $<span id="amount"></span><h3>
-        <p>With a conversion rate of $<span id="conversion-rate"></span></p>
+      <div class="text-center">
+      <button id="convert" class="btn-success">Convert!</button>
+      <button id="reset" type="reset" class="btn-danger">Start Over</button>
+      </div>
+      <div class="bg-light border" id="result">
+        <h3>Based on the amount of <span id="amount"></span> US dollars<h3>
+        <p>With a conversion rate of <span id="conversion-rate"></span></p>
         <p>The value of your USD is <span id="value">!</span></p>
         <p class="show-errors"></p>
       </div>

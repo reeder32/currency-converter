@@ -20,17 +20,27 @@ $("#convert").on("click", (event) => {
     currency,
     amount
   ).then(function (response) {
-    showConversion(response, amount);
+    showConversion(response, amount, currency);
   });
 });
 
-const showConversion = (response, amount) => {
-  console.log(response.result);
+const showElements = (error) => {
+  $("#result").fadeIn();
+  if (error) {
+    $("h3").hide();
+    $("p").hide();
+    $(".show-errors").fadeIn();
+  }
+};
+
+const showConversion = (response, amount, currency) => {
   if (response.result === "success") {
     $("#amount").text(amount);
     $("#conversion-rate").text(response.conversion_rate);
-    $("#value").text(response.conversion_result);
+    $("#value").text(`${response.conversion_result} in ${currency}`);
+    showElements(false);
   } else {
-    $(".show-errors").text(`"There was an error: ${response["error-type"]}"`);
+    $(".show-errors").text(`There was an error: ${response["error-type"]}`);
+    showElements(true);
   }
 };

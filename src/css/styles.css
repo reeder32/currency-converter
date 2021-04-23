@@ -1,0 +1,27 @@
+#result {
+  display: none;
+}
+
+#dollars,
+#currency-select {
+  margin: 16px;
+}
+
+#amount,
+#conversion-rate,
+#value {
+  font-weight: bold;
+}
+.show-errors {
+  color: red;
+}
+#form {
+  padding-top: 16px;
+  height: 200px;
+  width: auto;
+}
+button {
+  margin: 4px;
+  height: auto;
+  width: 50%;
+}
