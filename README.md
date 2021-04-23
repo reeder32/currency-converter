@@ -20,8 +20,14 @@
 1. Clone git repository [here](https://github.com/reeder32/currency-converter.git)
 2. Navigate to root folder, run 'npm install'
 3. In terminal, run 'npm run build'
-4. In terminal, run 'npm run start' to start test server
-5. Navigate to browser to see home page.
+4. This app uses https://www.exchangerate-api.com.
+
+- Go [here](https://www.exchangerate-api.com) to get your free api key
+- Create a .env file by navigating to the root folder and running command 'touch .env'
+- Open the .env file and enter text 'API_KEY = "your_custom_api_key"
+
+5. In terminal, run 'npm run start' to start test server
+6. Home page will open in your default browser.
 
 ## License
 
