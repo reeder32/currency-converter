@@ -2,6 +2,10 @@
   display: none;
 }
 
+#reset {
+  display: none;
+}
+
 #dollars,
 #currency-select {
   margin: 16px;
