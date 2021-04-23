@@ -4,10 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import ConverterService from "./converter-service.js";
 
-$("#currencySelecter").ready(() => {
+$("#currency-selecter").ready(() => {
   let cs = new ConverterService();
   cs.currencyList.forEach((symbol) => {
-    $("#currencySelecter").append(
+    $("#currency-selecter").append(
       `<option value="${symbol}">${symbol}</option>`
     );
   });
@@ -15,7 +15,7 @@ $("#currencySelecter").ready(() => {
 $("#convert").on("click", (event) => {
   event.preventDefault();
   const amount = parseFloat($("#dollars").val());
-  var currency = $("#currencySelecter option:selected").text();
+  var currency = $("#currency-selecter option:selected").text();
   ConverterService.getConversionRateForCurrencyWithAmount(
     currency,
     amount
@@ -25,11 +25,12 @@ $("#convert").on("click", (event) => {
 });
 
 const showConversion = (response, amount) => {
-  if (response) {
+  console.log(response.result);
+  if (response.result === "success") {
     $("#amount").text(amount);
     $("#conversion-rate").text(response.conversion_rate);
     $("#value").text(response.conversion_result);
   } else {
-    console.log("There was an error: ", response.message);
+    $(".show-errors").text(`"There was an error: ${response["error-type"]}"`);
   }
 };

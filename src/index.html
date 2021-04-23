@@ -11,7 +11,7 @@
       <form id="form">
         <label for="dollars">Enter USD Amount: </label>
         <input id="dollars"></input>
-        <select name="currency-select" id="currencySelecter">
+        <select name="currency-select" id="currency-selecter">
           <option value="" disabled>Country Currency Code</option>
         </select>
         <button id="convert" class="btn-primary">Convert!</button>
@@ -21,6 +21,7 @@
         <h3>Based on the amount of $<span id="amount"></span><h3>
         <p>With a conversion rate of $<span id="conversion-rate"></span></p>
         <p>The value of your USD is <span id="value">!</span></p>
+        <p class="show-errors"></p>
       </div>
     </div>
   </body>
