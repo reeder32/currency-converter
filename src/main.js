@@ -4,6 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import ConverterService from "./converter-service.js";
 
+$("#currencySelecter").ready(() => {
+  let cs = new ConverterService();
+  cs.currencyList.forEach((symbol) => {
+    $("#currencySelecter").append(
+      `<option value="${symbol}">${symbol}</option>`
+    );
+  });
+});
 $("#convert").on("click", (event) => {
   event.preventDefault();
   const amount = parseFloat($("#dollars").val());
