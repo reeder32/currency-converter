@@ -1,6 +1,8 @@
 export default class ConverterService {
-  static getConversionRateForCurrency(currency, amount) {
-    fetch`https://v6.exchangerate-api.com/v6/42372097ffb9a66ad8e19fb8/pair/USD/${currency}/${amount}`
+  static getConversionRateForCurrencyWithAmount(currency, amount) {
+    return fetch(
+      `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${currency}/${amount}`
+    )
       .then(function (response) {
         if (!response.ok) {
           throw Error(response.statusText);
