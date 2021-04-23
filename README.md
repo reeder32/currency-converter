@@ -17,11 +17,11 @@
 
 ## Setup/Installation Requirements
 
-1. Clone git repository [Click here](https://github.com/reeder32/currency-converter.git)
+1. Clone git repository [here](https://github.com/reeder32/currency-converter.git)
 2. Navigate to root folder, run 'npm install'
 3. In terminal, run 'npm run build'
 4. In terminal, run 'npm run start' to start test server
-6. Navigate to browser to see home page.
+5. Navigate to browser to see home page.
 
 ## License
 
