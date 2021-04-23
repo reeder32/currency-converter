@@ -15,18 +15,20 @@ $("#currencySelecter").ready(() => {
 $("#convert").on("click", (event) => {
   event.preventDefault();
   const amount = parseFloat($("#dollars").val());
-  //const currency = $("").val();
-
-  ConverterService.getConversionRateForCurrencyWithAmount("EUR", amount).then(
-    function (response) {
-      showConversion(response);
-    }
-  );
+  var currency = $("#currencySelecter option:selected").text();
+  ConverterService.getConversionRateForCurrencyWithAmount(
+    currency,
+    amount
+  ).then(function (response) {
+    showConversion(response, amount);
+  });
 });
 
-const showConversion = (response) => {
+const showConversion = (response, amount) => {
   if (response) {
-    console.log(response);
+    $("#amount").text(amount);
+    $("#conversion-rate").text(response.conversion_rate);
+    $("#value").text(response.conversion_result);
   } else {
     console.log("There was an error: ", response.message);
   }
