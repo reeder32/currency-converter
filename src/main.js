@@ -6,7 +6,10 @@ import ConverterService from "./converter-service.js";
 
 $("#convert").on("click", (event) => {
   event.preventDefault();
-  ConverterService.getConversionRateForCurrencyWithAmount("EUR", 10.52).then(
+  const amount = parseFloat($("#dollars").val());
+  //const currency = $("").val();
+
+  ConverterService.getConversionRateForCurrencyWithAmount("EUR", amount).then(
     function (response) {
       showConversion(response);
     }
